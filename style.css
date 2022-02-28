@@ -1,0 +1,42 @@
+body {
+    margin: 0;
+    overflow: hidden;
+}
+
+.controls {
+    position: absolute;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.controls > * {
+    margin: 0;
+    padding: 0;
+}
+
+.normal_color {
+    color: #424349;
+}
+
+.warning_color {
+    color: red;
+}
+
+.warning_color::before {
+    content: "Performance warning! Too much triangles. Some triangles are not rendered.";
+    display: block;
+    margin: 1px;
+}
+
+.controls > p {
+    font-size: small;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    margin-bottom: 4px;
+    margin-left: 8px;
+}
+
+.canvas_container {
+    width: 100vw;
+    height: 100vh;
+}
