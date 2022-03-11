@@ -16,9 +16,9 @@ window.addEventListener("load", function () {
                     return;
                 }
 
-                let sliderLine = sliderContainer.querySelector('.slider__line');
-                let slidersLineRect = sliderLine.getBoundingClientRect();
-                let percent = Math.min(Math.max((ev.clientX - slidersLineRect.x) / slidersLineRect.width, 0.0), 1.0);
+                const sliderLine = sliderContainer.querySelector('.slider__line');
+                const slidersLineRect = sliderLine.getBoundingClientRect();
+                const percent = Math.min(Math.max((ev.clientX - slidersLineRect.x) / slidersLineRect.width, 0.0), 1.0);
                 sliderContainer.style.setProperty("--slider-percent", `${percent * 100}%`);
 
                 sliderContainer.dispatchEvent(new CustomEvent("slidermove", { detail: { percent: percent } }));

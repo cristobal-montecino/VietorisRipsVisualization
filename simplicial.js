@@ -22,8 +22,8 @@ function linearMap(value, x0, x1, y0, y1) {
  * @returns {number}
  */
 function distance2(x0, y0, x1, y1) {
-    let x = x0 - x1;
-    let y = y0 - y1;
+    const x = x0 - x1;
+    const y = y0 - y1;
     return x * x + y * y;
 }
 
@@ -264,9 +264,9 @@ function Renderer() {
 
 window.addEventListener("load", function () {
     let ballRadius = 10;
-    let renderer = Renderer();
+    const renderer = Renderer();
 
-    let slider = document.querySelector(".controls__radius_slider");
+    const slider = document.querySelector(".controls__radius_slider");
     slider.addEventListener("slidermove", ev => {
         const percent = ev.detail.percent;
         const minSliderValue = 10;
