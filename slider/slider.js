@@ -11,7 +11,10 @@ window.addEventListener("load", function () {
                 isPointerDown = false;
             });
 
-            window.addEventListener("pointermove", ev => {
+            /**
+             * @param {PointerEvent}
+             */
+            function onpointermove(ev) {
                 if (!isPointerDown) {
                     return;
                 }
@@ -22,7 +25,9 @@ window.addEventListener("load", function () {
                 sliderContainer.style.setProperty("--slider-percent", `${percent * 100}%`);
 
                 sliderContainer.dispatchEvent(new CustomEvent("slidermove", { detail: { percent: percent } }));
-            });
+            }
+            sliderContainer.addEventListener("pointermove", onpointermove);
+            window.addEventListener("pointermove", onpointermove);
         }
 
         registerSlider();
