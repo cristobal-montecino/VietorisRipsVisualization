@@ -1,18 +1,18 @@
 window.addEventListener("load", function () {
     document.querySelectorAll('.slider__container').forEach(sliderContainer => {
         function registerSlider() {
-            let isMouseDown = false;
+            let isPointerDown = false;
 
-            sliderContainer.addEventListener("mousedown", ev => {
-                isMouseDown = true;
+            sliderContainer.addEventListener("pointerdown", ev => {
+                isPointerDown = true;
             });
 
-            window.addEventListener("mouseup", ev => {
-                isMouseDown = false;
+            window.addEventListener("pointerup", ev => {
+                isPointerDown = false;
             });
 
-            window.addEventListener("mousemove", ev => {
-                if (!isMouseDown) {
+            window.addEventListener("pointermove", ev => {
+                if (!isPointerDown) {
                     return;
                 }
 
